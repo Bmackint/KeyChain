@@ -1,6 +1,7 @@
 package com.example.keychain.ui.login
 
 import android.app.Activity
+import android.content.Intent
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -15,6 +16,7 @@ import android.widget.Toast
 import com.example.keychain.databinding.ActivityLoginBinding
 
 import com.example.keychain.R
+import com.example.keychain.keys.KeysActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -102,11 +104,13 @@ class LoginActivity : AppCompatActivity() {
         val welcome = getString(R.string.welcome)
         val displayName = model.displayName
         // TODO : initiate successful logged in experience
-        Toast.makeText(
-            applicationContext,
-            "$welcome $displayName",
-            Toast.LENGTH_LONG
-        ).show()
+        val intent = Intent(this, KeysActivity:: class.java)
+        startActivity(intent)
+//        Toast.makeText(
+//            applicationContext,
+//            "$welcome $displayName",
+//            Toast.LENGTH_LONG
+//        ).show()
     }
 
     private fun showLoginFailed(@StringRes errorString: Int) {
