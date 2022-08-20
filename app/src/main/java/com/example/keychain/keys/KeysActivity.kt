@@ -14,7 +14,7 @@ class KeysActivity : AppCompatActivity() {
         setContentView(R.layout.activity_keys)
 
         val arrayAdapter: ArrayAdapter<*>
-        val users = arrayOf(
+        val names = arrayOf(
             "dfgsdfaaew", "dfgsdfaaew", "dfgsdfaaew", "dfgsdfaaew",
             "dfgsdfaaew", "dfgsdfaaew","asdfsdf"
         )
@@ -22,7 +22,7 @@ class KeysActivity : AppCompatActivity() {
         var mListView = findViewById<ListView>(R.id.keysList)
         arrayAdapter = ArrayAdapter(this,
         android.R.layout.simple_expandable_list_item_1
-            , users)
+            , names)
         mListView.adapter = arrayAdapter
     }
 }
